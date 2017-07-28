@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import builtins from 'rollup-plugin-node-builtins';
 
-const NAMESPACE = require('./namespace.config.json');
+const NAMESPACE = require('./namespace.config.json').namespace;
 const getModuleName = function(name) {
     return `${NAMESPACE}.${name}`;
 };
