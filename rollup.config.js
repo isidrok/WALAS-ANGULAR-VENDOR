@@ -13,7 +13,7 @@ export default {
     entry: 'src/vendor.js',
     dest: 'dist/vendor.js',
     format: 'umd',
-    moduleName: getModuleName('NgVendor'),
+    moduleName: getModuleName('Vendor'),
     plugins: [
         resolve(),
         builtins(),
