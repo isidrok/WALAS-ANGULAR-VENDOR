@@ -1,2 +1,2 @@
 # WALAS-ANGULAR-VENDOR
-Vendor module with the required dependencies to work with Angular 4
+Vendor module with the required modules to work with Angular 4
