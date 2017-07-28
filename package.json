@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/vendor.js",
   "scripts": {
-    "build": "rollup -c config/rollup.config.js",
-    "build:dev": "rollup -c config/rollup.config.dev.js",
+    "build": "rollup -c rollup.config.js",
+    "build:dev": "rollup -c rollup.config.dev.js",
     "deploy": "npm run build"
   },
   "author": "",
