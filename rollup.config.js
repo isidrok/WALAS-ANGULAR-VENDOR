@@ -27,6 +27,6 @@ export default {
         }),
         uglify()
     ],
-    sourceMap: true,
+    sourceMap: false,
     sourceMapFile: 'dist/vendor.js.map'
 };
