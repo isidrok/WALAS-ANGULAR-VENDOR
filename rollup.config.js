@@ -2,7 +2,6 @@ import uglify from 'rollup-plugin-uglify';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import builtins from 'rollup-plugin-node-builtins';
 
 const NAMESPACE = require('./namespace.config.json').namespace;
 const getModuleName = function(name) {
@@ -16,7 +15,6 @@ export default {
     moduleName: getModuleName('Vendor'),
     plugins: [
         resolve(),
-        builtins(),
         commonjs({
             include: 'node_modules/**',
         }),
@@ -27,6 +25,6 @@ export default {
         }),
         uglify()
     ],
-    sourceMap: false,
+    sourceMap: true,
     sourceMapFile: 'dist/vendor.js.map'
 };
