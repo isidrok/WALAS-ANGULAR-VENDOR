@@ -11,7 +11,8 @@ const getModuleName = function(name) {
 export default {
     entry: 'src/vendor.js',
     dest: 'dist/vendor.js',
-    format: 'umd',
+    format: 'cjs',
+    exports: 'named',
     moduleName: getModuleName('Vendor'),
     plugins: [
         resolve(),
