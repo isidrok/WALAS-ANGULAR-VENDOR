@@ -2,11 +2,12 @@
   "name": "@walas/angular-vendor",
   "version": "0.0.0",
   "description": "",
-  "main": "dist/vendor.js",
+  "main": "dist/walas_angular_vendor.min.js",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "build:dev": "rollup -c rollup.config.dev.js",
-    "deploy": "npm run build"
+    "build:nomin": "rollup -c rollup.config.nomin.js",
+    "build:depl": "npm-run-all --parallel build build:nomin",
+    "depl": "npm run build:depl"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015-rollup": "^3.0.0",
+    "npm-run-all": "^4.1.1",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",

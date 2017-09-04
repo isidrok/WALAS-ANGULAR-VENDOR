@@ -10,10 +10,19 @@ const getModuleName = function(name) {
 
 export default {
     entry: 'src/vendor.js',
-    dest: 'dist/vendor.js',
+    dest: 'dist/walas_angular_vendor.min.js',
     format: 'cjs',
-    exports: 'named',
-    moduleName: getModuleName('Vendor'),
+    exports: 'named', // let rollup know that we are exporting several things
+    moduleName: getModuleName('walasAngularVendor'),
+    onwarn : (warning) => {
+        /**
+         * There are several conflicting namespaces due to multiple angular modules
+         * exporting the same variables, therefore we avoid loggin those warnings.
+         */
+        if(warning.code !== 'NAMESPACE_CONFLICT'){
+            console.warn(warning.message);
+        }
+    },
     plugins: [
         resolve(),
         commonjs({
@@ -27,5 +36,5 @@ export default {
         uglify()
     ],
     sourceMap: true,
-    sourceMapFile: 'dist/vendor.js.map'
+    sourceMapFile: 'dist/walas_angular_vendor.min.js.map'
 };
