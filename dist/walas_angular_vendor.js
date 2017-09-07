@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.WALAS = global.WALAS || {}, global.WALAS.walasAngularVendor = global.WALAS.walasAngularVendor || {})));
+}(this, (function (exports) { 'use strict';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -69989,4 +69991,8 @@ exports.ReactiveFormsModule = ReactiveFormsModule;
 exports.ɵbf = NgNoValidate;
 exports.ɵbe = RangeValueAccessor;
 exports.ɵv = MAX_LENGTH_VALIDATOR;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
 //# sourceMappingURL=walas_angular_vendor.js.map

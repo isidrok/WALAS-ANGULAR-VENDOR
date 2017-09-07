@@ -9,9 +9,9 @@ const getModuleName = function(name) {
 };
 
 export default {
-    entry: 'src/vendor.js',
+    entry: 'src/index.js',
     dest: 'dist/walas_angular_vendor.min.js',
-    format: 'cjs',
+    format: 'umd',
     exports: 'named', // let rollup know that we are exporting several things
     moduleName: getModuleName('walasAngularVendor'),
     onwarn : (warning) => {
@@ -26,7 +26,7 @@ export default {
     plugins: [
         resolve(),
         commonjs({
-            include: 'node_modules/**',
+            include: 'node_modules/**'  
         }),
         babel({
             exclude: [
