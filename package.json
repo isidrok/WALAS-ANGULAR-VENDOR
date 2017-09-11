@@ -2,7 +2,8 @@
   "name": "@walas/angular-vendor",
   "version": "0.0.0",
   "description": "",
-  "main": "dist/walas_angular_vendor.min.js",
+  "main": "dist/walas_angular_vendor.umd.js",
+  "module": "dist/walas_angular_vendor.js",
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "build:nomin": "rollup -c rollup.config.nomin.js",
@@ -19,7 +20,10 @@
     "@angular/http": "^4.3.1",
     "@angular/platform-browser": "^4.3.1",
     "@angular/platform-browser-dynamic": "^4.3.1",
-    "@angular/router": "^4.3.1"
+    "@angular/router": "^4.3.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.8.17"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -30,5 +34,8 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^1.0.2"
-  }
+  },
+  "files": [
+    "dist"
+  ]    
 }

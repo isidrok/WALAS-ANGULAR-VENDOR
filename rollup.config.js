@@ -10,23 +10,30 @@ const getModuleName = function(name) {
 
 export default {
     entry: 'src/index.js',
-    dest: 'dist/walas_angular_vendor.min.js',
-    format: 'umd',
+    targets: [
+        {dest: 'dist/walas_angular_vendor.umd.min.js', format: 'umd'},
+        /** 
+         * keep commented until uglify works correctly with es modules
+         * {dest: 'dist/walas_angular_vendor.min.js', format:'es'} 
+         */
+
+    ],
+    sourceMap: true,    
     exports: 'named', // let rollup know that we are exporting several things
     moduleName: getModuleName('walasAngularVendor'),
-    onwarn : (warning) => {
+    onwarn: (warning) => {
         /**
          * There are several conflicting namespaces due to multiple angular modules
          * exporting the same variables, therefore we avoid loggin those warnings.
          */
-        if(warning.code !== 'NAMESPACE_CONFLICT'){
+        if (warning.code !== 'NAMESPACE_CONFLICT') {
             console.warn(warning.message);
         }
     },
     plugins: [
         resolve(),
         commonjs({
-            include: 'node_modules/**'  
+            include: 'node_modules/**'
         }),
         babel({
             exclude: [
@@ -34,7 +41,5 @@ export default {
             ]
         }),
         uglify()
-    ],
-    sourceMap: true,
-    sourceMapFile: 'dist/walas_angular_vendor.min.js.map'
+    ]
 };
